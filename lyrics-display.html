@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>גשר מוזיקלי - אני מאמין</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap');
+
+        :root {
+            --primary-color: #3b82f6;
+            --secondary-color: #1e3a8a;
+            --background-color: #f8fafc;
+            --text-color: #1e293b;
+            --light-color: #f1f5f9;
+            --border-color: #e2e8f0;
+            --alternate-row-color: #f1f5f9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rubik', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .site-title {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .site-description {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .song-container {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0px 0px 6px 5px rgba(0, 0, 0, 0.1);
+            margin: 2rem auto;
+            overflow: hidden;
+        }
+
+        .song-header {
+            background-color: var(--light-color);
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .song-header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .thumbnail-container {
+            width: 120px;
+            height: 120px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            flex-shrink: 0;
+        }
+
+        .thumbnail-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .song-info {
+            text-align: center;
+        }
+
+        .song-title {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+            font-weight: 700;
+        }
+
+        .artist-name {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            padding: 1rem 1.5rem;
+            justify-content: center;
+            border-top: 1px solid var(--border-color);
+            background-color: var(--light-color);
+        }
+
+        .tag {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+
+        .lyrics-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 0.5rem;
+            padding: 0.5rem;
+        }
+
+        .lyrics-column {
+            padding: 1rem;
+        }
+
+        .lyrics-title {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+            color: var(--secondary-color);
+        }
+
+        .lyrics-content {
+            white-space: pre-line;
+            text-align: right;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .lyrics-content.transcription {
+            color: #4b5563;
+
+        }
+
+        .lyrics-content.english {
+            text-align: left;
+        }
+
+        .highlight {
+            background-color: rgba(59, 130, 246, 0.1);
+            padding: 0.5rem;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 0.25rem 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            background-color: var(--light-color);
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* סגנונות לסוגי שורות שונים */
+        .chorus {
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+
+        .verse {
+            /* סגנון רגיל */
+        }
+
+        .bridge {
+            font-style: italic;
+            color: #6366f1;
+            /* indigo-500 */
+        }
+
+        .intro {
+            font-weight: 300;
+            color: #4b5563;
+            /* gray-600 */
+        }
+
+        .outro {
+            font-weight: 300;
+            font-style: italic;
+            color: #4b5563;
+            /* gray-600 */
+        }
+
+        .icon {
+            font-size: 1.5rem;
+            display: block;
+            margin: 0.5rem auto;
+        }
+
+        /* מסך טעינה */
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            font-size: 1.2rem;
+        }
+
+        /* הודעת שגיאה */
+        .error-message {
+            color: #ef4444;
+            text-align: center;
+            padding: 2rem;
+            font-size: 1.2rem;
+        }
+
+        /* שורות השיר */
+        .lyrics-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+        /* צבע רקע לשורות זוגיות במסך צר */
+        .lyrics-row:nth-child(even) {
+            background-color: var(--alternate-row-color);
+        }
+
+        /* הוספת קו מפריד בין הקבוצות */
+        .lyrics-row {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 768px) {
+            .lyrics-container {
+                grid-template-columns: 1fr;
+                display: none;
+                /* הסתרת הכותרות במצב מובייל */
+            }
+
+            #lyrics-content.container {
+                padding: 1rem 0;
+            }
+
+            .lyrics-row {
+                grid-template-columns: 1fr;
+                margin-bottom: 0;
+                padding: 0.75rem;
+            }
+
+
+
+            /* מרווח בין הקבוצות */
+            .lyrics-cell {
+                margin-bottom: 0.25rem;
+            }
+
+            /* הסרת הקו מהשורה האחרונה */
+            .lyrics-row:last-child {
+                border-bottom: none;
+            }
+        }
+
+        .lyrics-cell {
+            padding: 0.25rem;
+        }
+
+        .lyrics-cell.hebrew {
+            text-align: right;
+        }
+
+        .lyrics-cell.transcription {
+            color: #4b5563;
+            text-align: right;
+        }
+
+        .lyrics-cell.english {
+            text-align: left;
+        }
+
+        /* סגנון לאזור הטמעת יוטיוב */
+        .youtube-embed {
+            padding: 1rem;
+            text-align: center;
+            background-color: var(--light-color);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        /* מצב קבוע של אזור הטמעת יוטיוב */
+        .youtube-embed.fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: var(--secondary-color);
+            padding: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+        }
+
+        .youtube-embed iframe {
+            max-width: 100%;
+            width: 560px;
+            height: 315px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        /* סגנון לאייפריים במצב קבוע */
+        .youtube-embed.fixed iframe {
+            width: 320px;
+            height: 180px;
+        }
+
+        /* מרווח נוסף לתוכן כדי שלא יוסתר על ידי הסרטון הקבוע במצב נעוץ */
+        body.has-fixed-video {
+            padding-top: 200px;
+        }
+
+        /* סגנון לכפתור חזרה */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 1rem 0;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .back-button::before {
+            content: "←";
+            margin-left: 0.5rem;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1 class="site-title">גשר מוזיקלי</h1>
+            <p class="site-description">שירים באנגלית - תרגום ותעתיק לעברית</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <a href="index.html" class="back-button">חזרה לרשימת השירים</a>
+        <div class="song-container">
+            <div class="song-header">
+                <div class="song-header-content">
+                    <!-- <div class="thumbnail-container" id="thumbnail-container">
+                        
+                    </div> -->
+                    <div class="song-info">
+                        <h2 class="song-title" id="song-title">טוען...</h2>
+                        <div class="artist-name" id="artist-name">טוען...</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- אזור הטמעת יוטיוב -->
+            <div id="youtube-embed" class="youtube-embed" style="display: none; padding: 1rem; text-align: center;">
+                <!-- הטמעת יוטיוב תוצג כאן -->
+            </div>
+
+            <div class="lyrics-container">
+                <div class="lyrics-column">
+                    <h3 class="lyrics-title">עברית</h3>
+                </div>
+
+                <div class="lyrics-column">
+                    <h3 class="lyrics-title">תעתיק</h3>
+                </div>
+
+                <div class="lyrics-column">
+                    <h3 class="lyrics-title">English</h3>
+                </div>
+            </div>
+
+            <div id="lyrics-content" class="container">
+                <div class="loading">טוען את מילות השיר...</div>
+            </div>
+
+            <!-- אזור התגיות -->
+            <div id="tags-container" class="tags-container">
+                <!-- התגיות יוצגו כאן -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="icon">🎵</div>
+        <p>גשר מוזיקלי &copy; 2025</p>
+        <p>שירים באנגלית - תרגום ותעתיק לעברית</p>
+        <p dir="ltr">@musicode1</p>
+    </footer>
+
+    <script>
+        // פונקציה להצגת מילות השיר
+        function renderLyrics(lyrics) {
+            const container = document.getElementById('lyrics-content');
+            container.innerHTML = '';
+
+            lyrics.forEach(line => {
+                const row = document.createElement('div');
+                row.className = 'lyrics-row';
+
+                // תא עברית
+                const hebrewCell = document.createElement('div');
+                hebrewCell.className = 'lyrics-cell hebrew';
+
+                // תא תעתיק
+                const transcriptionCell = document.createElement('div');
+                transcriptionCell.className = 'lyrics-cell transcription';
+
+                // תא אנגלית
+                const englishCell = document.createElement('div');
+                englishCell.className = 'lyrics-cell english';
+
+                // גישה לתוכן דרך אובייקט content
+                const hebrew = line.content?.hebrew || '';
+                const transcription = line.content?.transcription || '';
+                const english = line.content?.english || '';
+
+                // הוספת מחלקת CSS בהתאם לסוג השורה
+                const type = line.type || 'verse'; // ברירת מחדל: verse
+
+                if (['verse', 'chorus', 'bridge', 'intro', 'outro'].includes(type)) {
+                    hebrewCell.innerHTML = `<span class="${type}">${hebrew}</span>`;
+                    transcriptionCell.innerHTML = `<span class="${type}">${transcription}</span>`;
+                    englishCell.innerHTML = `<span class="${type}">${english}</span>`;
+                } else if (type === 'highlight') {
+                    // שמירה על תמיכה בסוג 'highlight' הישן
+                    hebrewCell.innerHTML = `<span class="highlight">${hebrew}</span>`;
+                    transcriptionCell.innerHTML = `<span class="highlight">${transcription}</span>`;
+                    englishCell.innerHTML = `<span class="highlight">${english}</span>`;
+                } else {
+                    // סוג לא מוכר - הצגה רגילה
+                    hebrewCell.textContent = hebrew;
+                    transcriptionCell.textContent = transcription;
+                    englishCell.textContent = english;
+                }
+
+                row.appendChild(hebrewCell);
+                row.appendChild(transcriptionCell);
+                row.appendChild(englishCell);
+
+                container.appendChild(row);
+            });
+        }
+        // פונקציה להצגת תמונה ממוזערת
+        function renderThumbnail(thumbnailUrl) {
+            const container = document.getElementById('thumbnail-container');
+            if (thumbnailUrl) {
+                container.innerHTML = `<img src="${thumbnailUrl}" alt="תמונת השיר">`;
+                container.style.display = 'block';
+            } else {
+                container.style.display = 'none';
+            }
+        }
+
+        // פונקציה להצגת תגיות
+        function renderTags(tags) {
+            const container = document.getElementById('tags-container');
+            container.innerHTML = '';
+
+            if (tags && tags.length > 0) {
+                tags.forEach(tag => {
+                    const tagElement = document.createElement('span');
+                    tagElement.className = 'tag';
+                    tagElement.textContent = tag;
+                    container.appendChild(tagElement);
+                });
+                container.style.display = 'flex';
+            } else {
+                container.style.display = 'none';
+            }
+        }
+
+        // פונקציה להצגת הטמעת יוטיוב
+        function renderYoutubeEmbed(youtubeLink) {
+            const container = document.getElementById('youtube-embed');
+            container.innerHTML = '';
+
+            if (youtubeLink) {
+
+                let videoId;
+
+                if (youtubeLink.startsWith('https://youtube.com')) {
+                    // המרת קישור יוטיוב רגיל לקישור הטמעה
+                    videoId = youtubeLink.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/i)?.[1];
+                } else {
+                    videoId = youtubeLink;
+                }
+
+                if (videoId) {
+                    const iframe = document.createElement('iframe');
+                    iframe.src = `https://www.youtube.com/embed/${videoId}`;
+                    iframe.title = "YouTube video player";
+                    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+                    iframe.allowFullscreen = true;
+
+                    container.appendChild(iframe);
+                    container.style.display = 'block';
+                } else {
+                    container.style.display = 'none';
+                }
+            } else {
+                container.style.display = 'none';
+            }
+        }
+
+        // פונקציה לקבלת פרמטרים מה-URL
+        function getUrlParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // טעינת הנתונים מקובץ ה-JSON באמצעות XMLHttpRequest
+        function loadSongData() {
+            // קבלת שם השיר מפרמטר URL או שימוש בברירת מחדל
+            const songParam = getUrlParameter('song');
+            const songFile = songParam ? `${songParam}.json` : 'new-day-will-rise.json';
+            const songPath = 'songs/' + songFile;
+
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', songPath, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        try {
+                            const songData = JSON.parse(xhr.responseText);
+
+                            // עדכון כותרת השיר ושם האמן
+                            document.getElementById('song-title').textContent = songData.title;
+
+                            // טיפול באמן שיכול להיות מחרוזת או אובייקט
+                            const artistName = typeof songData.artist === 'string'
+                                ? songData.artist
+                                : songData.artist.name;
+                            document.getElementById('artist-name').textContent = artistName;
+
+                            document.title = `גשר מוזיקלי - ${songData.title}`;
+
+                            // הצגת תמונה ממוזערת אם קיימת
+                            // renderThumbnail(songData.thumbnail);
+
+                            // הצגת תגיות אם קיימות
+                            renderTags(songData.tags);
+
+                            // הצגת הטמעת יוטיוב אם קיים קישור
+                            renderYoutubeEmbed(songData["youtube-link"]);
+
+                            // הצגת מילות השיר
+                            renderLyrics(songData.lyrics);
+                        } catch (error) {
+                            console.error('שגיאה בניתוח נתוני השיר:', error);
+                            document.getElementById('lyrics-content').innerHTML = `<div class="error-message">שגיאה בניתוח נתוני השיר: ${error.message}</div>`;
+                        }
+                    } else {
+                        console.error('שגיאה בטעינת נתוני השיר:', xhr.status);
+                        document.getElementById('lyrics-content').innerHTML = `<div class="error-message">שגיאה בטעינת נתוני השיר. קוד שגיאה: ${xhr.status}</div>`;
+                    }
+                }
+            };
+            xhr.onerror = function () {
+                console.error('שגיאה בטעינת נתוני השיר');
+                document.getElementById('lyrics-content').innerHTML = `<div class="error-message">שגיאה בטעינת נתוני השיר. נסה להריץ את האתר משרת מקומי.</div>`;
+            };
+            xhr.send();
+        }
+
+        // טעינת נתוני השיר כאשר הדף נטען
+        document.addEventListener('DOMContentLoaded', function () {
+            loadSongData();
+
+            // הוספת מעקב אחר גלילת הדף
+            setupStickyVideo();
+        });
+
+        // פונקציה להגדרת וידאו נעוץ בעת גלילה
+        function setupStickyVideo() {
+            const youtubeEmbed = document.getElementById('youtube-embed');
+            let embedPosition; // מיקום אלמנט הוידאו
+
+            // פונקציה שבודקת אם צריך להפעיל את מצב הנעיצה
+            function checkStickyState() {
+                // אם אלמנט הוידאו לא מוצג, אין צורך להמשיך
+                if (youtubeEmbed.style.display === 'none') {
+                    return;
+                }
+
+                // אם עוד לא חישבנו את המיקום, נחשב אותו
+                if (!embedPosition) {
+                    embedPosition = youtubeEmbed.getBoundingClientRect().top + window.scrollY;
+                }
+
+                // אם גללנו מעבר למיקום הוידאו, נפעיל מצב נעוץ
+                if (window.scrollY > embedPosition) {
+                    youtubeEmbed.classList.add('fixed');
+                    document.body.classList.add('has-fixed-video');
+                } else {
+                    youtubeEmbed.classList.remove('fixed');
+                    document.body.classList.remove('has-fixed-video');
+                }
+            }
+
+            // הוספת מאזין לאירוע גלילה
+            window.addEventListener('scroll', checkStickyState);
+
+            // בדיקה ראשונית של מצב הנעיצה
+            window.addEventListener('load', function () {
+                // איפוס המיקום בטעינה מחדש
+                embedPosition = null;
+                // בדיקת מצב הנעיצה לאחר שהתמונות נטענו
+                setTimeout(checkStickyState, 500);
+            });
+        }
+    </script>
+</body>
+
+</html>

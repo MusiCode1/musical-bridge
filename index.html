@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>גשר מוזיקלי - ספריית שירים</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap');
+
+        :root {
+            --primary-color: #3b82f6;
+            --secondary-color: #1e3a8a;
+            --background-color: #f8fafc;
+            --text-color: #1e293b;
+            --light-color: #f1f5f9;
+            --border-color: #e2e8f0;
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --card-hover-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rubik', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .site-title {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .site-description {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .songs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .song-card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: var(--text-color);
+            display: block;
+        }
+
+        .song-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-hover-shadow);
+        }
+
+        .song-thumbnail {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .song-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .song-card:hover .song-thumbnail img {
+            transform: scale(1.05);
+        }
+
+        .song-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .song-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+            font-weight: 700;
+        }
+
+        .song-artist {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .song-card:hover .play-icon {
+            opacity: 1;
+        }
+
+        .play-icon::before {
+            content: "▶";
+            font-size: 24px;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+        }
+
+        .error-message {
+            color: #ef4444;
+            text-align: center;
+            padding: 2rem;
+            font-size: 1.2rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            background-color: var(--light-color);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .icon {
+            font-size: 1.5rem;
+            display: block;
+            margin: 0.5rem auto;
+        }
+
+        @media (max-width: 768px) {
+            .songs-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .song-thumbnail {
+                height: 150px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .songs-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1 class="site-title">גשר מוזיקלי</h1>
+            <p class="site-description">שירים באנגלית - תרגום ותעתיק לעברית</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div id="songs-container" class="songs-grid">
+            <div class="loading">טוען שירים...</div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="icon">🎵</div>
+        <p>גשר מוזיקלי &copy; 2025</p>
+        <p>שירים באנגלית - תרגום ותעתיק לעברית</p>
+        <p dir="ltr">@musicode1</p>
+    </footer>
+
+    <script>
+        // פונקציה לטעינת רשימת השירים
+        function loadSongsList() {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', 'songs-list.json', true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        try {
+                            const songsData = JSON.parse(xhr.responseText);
+                            renderSongsGrid(songsData);
+                        } catch (error) {
+                            console.error('שגיאה בניתוח נתוני השירים:', error);
+                            document.getElementById('songs-container').innerHTML = `<div class="error-message">שגיאה בניתוח נתוני השירים: ${error.message}</div>`;
+                        }
+                    } else {
+                        console.error('שגיאה בטעינת נתוני השירים:', xhr.status);
+                        document.getElementById('songs-container').innerHTML = `<div class="error-message">שגיאה בטעינת נתוני השירים. קוד שגיאה: ${xhr.status}</div>`;
+                    }
+                }
+            };
+            xhr.onerror = function () {
+                console.error('שגיאה בטעינת נתוני השירים');
+                document.getElementById('songs-container').innerHTML = `<div class="error-message">שגיאה בטעינת נתוני השירים. נסה להריץ את האתר משרת מקומי.</div>`;
+            };
+            xhr.send();
+        }
+
+        // פונקציה להצגת רשימת השירים בתצוגת רשת
+        function renderSongsGrid(songs) {
+            const container = document.getElementById('songs-container');
+            container.innerHTML = '';
+
+            if (songs && songs.length > 0) {
+                songs.forEach(song => {
+                    // יצירת כרטיס שיר
+                    const songCard = document.createElement('a');
+                    songCard.className = 'song-card';
+                    songCard.href = song.page;
+
+                    // תמונה ממוזערת
+                    const thumbnailUrl = `https://i.ytimg.com/vi_webp/${song.youtube}/maxresdefault.webp`;
+                    
+                    // יצירת תוכן הכרטיס
+                    songCard.innerHTML = `
+                        <div class="song-thumbnail">
+                            <img src="${thumbnailUrl}" alt="${song.name}">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="song-info">
+                            <h2 class="song-title">${song.name}</h2>
+                            <div class="song-artist">${song.artist}</div>
+                        </div>
+                    `;
+
+                    container.appendChild(songCard);
+                });
+            } else {
+                container.innerHTML = `<div class="error-message">לא נמצאו שירים</div>`;
+            }
+        }
+
+        // טעינת רשימת השירים כאשר הדף נטען
+        document.addEventListener('DOMContentLoaded', function () {
+            loadSongsList();
+        });
+    </script>
+</body>
+
+</html>

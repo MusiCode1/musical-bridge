@@ -1,0 +1,490 @@
+{
+  "title": "New Day Will Rise",
+  "artist": "Yuval Refael",
+  "thumbnail": "https://i.ytimg.com/vi_webp/Q3BELu4z6-U/maxresdefault.webp",
+  "youtube-link": "Q3BELu4z6-U",
+  "year": 2025,
+  "lyrics": [
+    {
+      "type": "verse",
+      "content": {
+        "english": "And even if you say goodbye",
+        "hebrew": "וגם אם תאמר שלום",
+        "transcription": "אֶנְד אִיבֶן אִיף יוּ סֵיי גוּדבַּיי"
+      }
+    },
+    {
+      "type": "verse",
+      "content": {
+        "english": "You'll never go away",
+        "hebrew": "לעולם לא תלך",
+        "transcription": "יוּל נֶבֶר גוֹ אַוֵויי"
+      }
+    },
+    {
+      "type": "verse",
+      "content": {
+        "english": "You are the rainbow of my sky",
+        "hebrew": "אתה הקשת בענן של שמיי",
+        "transcription": "יוּ אַר דֶה רֵיינְבּוֹ אוֹף מַיי סְקַאיי"
+      }
+    },
+    {
+      "type": "verse",
+      "content": {
+        "english": "My colours in the grey",
+        "hebrew": "הצבע שלי באפרוריות",
+        "transcription": "מַיי קַאלֶרְס אִין דֶה גְרֵיי"
+      }
+    },
+    {
+      "type": "verse",
+      "content": {
+        "english": "My only wish upon a star",
+        "hebrew": "המשאלה היחידה שלי",
+        "transcription": "מַיי אוֹנְלִי וִישׁ אַפּוֹן אֶה סְטַאר"
+      }
+    },
+    {
+      "type": "verse",
+      "content": {
+        "english": "Sunshine in the day",
+        "hebrew": "קרן השמש במהלך היום",
+        "transcription": "סַאנְשַׁיין אִין דֶה דֵיי"
+      }
+    },
+    {
+      "type": "verse",
+      "content": {
+        "english": "The only song that my piano ever plays",
+        "hebrew": "השיר היחיד שהפסנתר שלי אי פעם מנגן",
+        "transcription": "דֶה אוֹנְלִי סוֹנְג דֶט מַיי פְּיַאנוֹ אֶבֶר פְּלֵייז"
+      }
+    },
+    {
+      "type": "chorus",
+      "content": {
+        "english": "And even if you say goodbye",
+        "hebrew": "וגם אם תאמר שלום",
+        "transcription": "אֶנְד אִיבֶן אִיף יוּ סֵיי גוּדבַּיי"
+      }
+    },
+    {
+      "type": "chorus",
+      "content": {
+        "english": "You'll always be around",
+        "hebrew": "תמיד תהיה בסביבה",
+        "transcription": "יוּל אוֹלְוֵויז בִּי אַרַאוּנְד"
+      }
+    },
+    {
+      "type": "chorus",
+      "content": {
+        "english": "To lift me up and take me high",
+        "hebrew": "להרים אותי ולקחת אותי לגבהים",
+        "transcription": "טוּ לִיפְט מִי אַפּ אֶנְד טֵייק מִי הַאיי"
+      }
+    },
+    {
+      "type": "chorus",
+      "content": {
+        "english": "Keep my feet close to the ground",
+        "hebrew": "לשמור את רגליי קרוב לקרקע",
+        "transcription": "קִיפּ מַיי פִיט קְלוֹס טוּ דֶה גְרַאוּנְד"
+      }
+    },
+    {
+      "type": "chorus",
+      "content": {
+        "english": "Are you proud of me tonight",
+        "hebrew": "האם אתה גאה בי הלילה?",
+        "transcription": "אַר יוּ פְּרַאוּד אוֹף מִי טוּנַייט"
+      }
+    },
+    {
+      "type": "chorus",
+      "content": {
+        "english": "Dreams are coming true",
+        "hebrew": "חלומות מתגשמים",
+        "transcription": "דְרִימְס אַר קַאמִינְג טְרוּ"
+      }
+    },
+    {
+      "type": "chorus",
+      "content": {
+        "english": "I choose the light",
+        "hebrew": "אני בוחרת באור",
+        "transcription": "אַיי צ'וּז דֶה לַייט"
+      }
+    },
+    {
+      "type": "chorus",
+      "content": {
+        "english": "Nothing to lose if I lose you",
+        "hebrew": "אין לי מה להפסיד אם אני מאבדת אותך",
+        "transcription": "נַאתִינְג טוּ לוּז אִיף אַיי לוּז יוּ"
+      }
+    },
+    {
+      "type": "chorus",
+      "content": {
+        "english": "New day will rise",
+        "hebrew": "יום חדש יעלה",
+        "transcription": "נְיוּ דֵיי וִיל רַייז"
+      }
+    },
+    {
+      "type": "chorus",
+      "content": {
+        "english": "Life will go on",
+        "hebrew": "החיים ימשיכו",
+        "transcription": "לַייף וִיל גוֹ אוֹן"
+      }
+    },
+    {
+      "type": "chorus",
+      "content": {
+        "english": "Everyone cries",
+        "hebrew": "כולם בוכים",
+        "transcription": "אֶבְרִיוַאן קְרַאייז"
+      }
+    },
+    {
+      "type": "chorus",
+      "content": {
+        "english": "Don't cry alone",
+        "hebrew": "אל תבכה לבד",
+        "transcription": "דוֹנְט קְרַאיי אַלוֹן"
+      }
+    },
+    {
+      "type": "chorus",
+      "content": {
+        "english": "Darkness will fade",
+        "hebrew": "החושך ייעלם",
+        "transcription": "דַארְקְנֶס וִיל פֵייד"
+      }
+    },
+    {
+      "type": "chorus",
+      "content": {
+        "english": "All the pain will go by",
+        "hebrew": "כל הכאב יעבור",
+        "transcription": "אוֹל דֶה פֵּיין וִיל גוֹ בַּאיי"
+      }
+    },
+    {
+      "type": "chorus",
+      "content": {
+        "english": "But we will stay",
+        "hebrew": "אבל אנחנו נישאר",
+        "transcription": "בַּאט וִי וִיל סְטֵיי"
+      }
+    },
+    {
+      "type": "chorus",
+      "content": {
+        "english": "Even if you say goodbye",
+        "hebrew": "גם אם תאמר שלום",
+        "transcription": "אִיבֶן אִיף יוּ סֵיי גוּדבַּיי"
+      }
+    },
+    {
+      "type": "verse",
+      "content": {
+        "english": "Et même si tu dis adieu",
+        "hebrew": "וגם אם תגיד שלום",
+        "transcription": "אֶה מֶם סִי טוּ דִי אַדְיֶה"
+      }
+    },
+    {
+      "type": "verse",
+      "content": {
+        "english": "Tu ne partiras jamais",
+        "hebrew": "לעולם לא תלך",
+        "transcription": "טוּ נֶה פַּרְטִירָה זַ'אמֶה"
+      }
+    },
+    {
+      "type": "verse",
+      "content": {
+        "english": "T'es l'arc-en-ciel de mon ciel bleu",
+        "hebrew": "אתה הקשת בענן של שמיי הכחולים",
+        "transcription": "טֶה לַארְק-אוֹן-סְיֶל דֶה מוֹן סְיֶל בְּלֶה"
+      }
+    },
+    {
+      "type": "verse",
+      "content": {
+        "english": "Mes couleurs dans le gris",
+        "hebrew": "הצבעים שלי באפור",
+        "transcription": "מֶה קוּלֶר דַאן לֶה גְרִי"
+      }
+    },
+    {
+      "type": "verse",
+      "content": {
+        "english": "Et mon seul souhait sous un ciel d'art",
+        "hebrew": "והמשאלה היחידה שלי תחת שמיים מלאי אמנות",
+        "transcription": "אֶה מוֹן סֶל סוּהֶה סוּ אֶן סְיֶל דַארְט"
+      }
+    },
+    {
+      "type": "verse",
+      "content": {
+        "english": "Un rayon dans ma journée",
+        "hebrew": "קרן אור ביום שלי",
+        "transcription": "אֶן רֵיוֹן דַאן מַה ז'וּרְנֶה"
+      }
+    },
+    {
+      "type": "verse",
+      "content": {
+        "english": "La seule chanson que mon piano peut jouer",
+        "hebrew": "השיר היחיד שהפסנתר שלי יכול לנגן",
+        "transcription": "לַה סֶל שַׁנְסוֹן קֶה מוֹן פְּיַאנוֹ פֶּה ז'וּאֶה"
+      }
+    },
+    {
+      "type": "chorus",
+      "content": {
+        "english": "New day will rise",
+        "hebrew": "יום חדש יעלה",
+        "transcription": "נְיוּ דֵיי וִיל רַייז"
+      }
+    },
+    {
+      "type": "chorus",
+      "content": {
+        "english": "Life will go on",
+        "hebrew": "החיים ימשיכו",
+        "transcription": "לַייף וִיל גוֹ אוֹן"
+      }
+    },
+    {
+      "type": "chorus",
+      "content": {
+        "english": "Everyone cries",
+        "hebrew": "כולם בוכים",
+        "transcription": "אֶבְרִיוַאן קְרַאייז"
+      }
+    },
+    {
+      "type": "chorus",
+      "content": {
+        "english": "Don't cry alone",
+        "hebrew": "אל תבכה לבד",
+        "transcription": "דוֹנְט קְרַאיי אַלוֹן"
+      }
+    },
+    {
+      "type": "chorus",
+      "content": {
+        "english": "Darkness will fade",
+        "hebrew": "החושך ייעלם",
+        "transcription": "דַארְקְנֶס וִיל פֵייד"
+      }
+    },
+    {
+      "type": "chorus",
+      "content": {
+        "english": "All the pain will go by",
+        "hebrew": "כל הכאב יעבור",
+        "transcription": "אוֹל דֶה פֵּיין וִיל גוֹ בַּאיי"
+      }
+    },
+    {
+      "type": "chorus",
+      "content": {
+        "english": "But we will stay",
+        "hebrew": "אבל אנחנו נישאר",
+        "transcription": "בַּאט וִי וִיל סְטֵיי"
+      }
+    },
+    {
+      "type": "chorus",
+      "content": {
+        "english": "Even if you say goodbye",
+        "hebrew": "גם אם תאמר שלום",
+        "transcription": "אִיבֶן אִיף יוּ סֵיי גוּדבַּיי"
+      }
+    },
+    {
+      "type": "chorus",
+      "content": {
+        "english": "New day will rise",
+        "hebrew": "יום חדש יעלה",
+        "transcription": "נְיוּ דֵיי וִיל רַייז"
+      }
+    },
+    {
+      "type": "chorus",
+      "content": {
+        "english": "Life will go on",
+        "hebrew": "החיים ימשיכו",
+        "transcription": "לַייף וִיל גוֹ אוֹן"
+      }
+    },
+    {
+      "type": "chorus",
+      "content": {
+        "english": "Everyone cries",
+        "hebrew": "כולם בוכים",
+        "transcription": "אֶבְרִיוַאן קְרַאייז"
+      }
+    },
+    {
+      "type": "chorus",
+      "content": {
+        "english": "Don't cry alone",
+        "hebrew": "אל תבכה לבד",
+        "transcription": "דוֹנְט קְרַאיי אַלוֹן"
+      }
+    },
+    {
+      "type": "chorus",
+      "content": {
+        "english": "Darkness will fade",
+        "hebrew": "החושך ייעלם",
+        "transcription": "דַארְקְנֶס וִיל פֵייד"
+      }
+    },
+    {
+      "type": "chorus",
+      "content": {
+        "english": "All the pain will go by",
+        "hebrew": "כל הכאב יעבור",
+        "transcription": "אוֹל דֶה פֵּיין וִיל גוֹ בַּאיי"
+      }
+    },
+    {
+      "type": "chorus",
+      "content": {
+        "english": "But you will stay",
+        "hebrew": "אבל אתה תישאר",
+        "transcription": "בַּאט יוּ וִיל סְטֵיי"
+      }
+    },
+    {
+      "type": "chorus",
+      "content": {
+        "english": "The love of my life",
+        "hebrew": "אהבת חיי",
+        "transcription": "דֶה לַאב אוֹף מַיי לַייף"
+      }
+    },
+    {
+      "type": "bridge",
+      "content": {
+        "english": "",
+        "hebrew": "מים רבים",
+        "transcription": ""
+      }
+    },
+    {
+      "type": "bridge",
+      "content": {
+        "english": "",
+        "hebrew": "לא יכבו",
+        "transcription": ""
+      }
+    },
+    {
+      "type": "bridge",
+      "content": {
+        "english": "",
+        "hebrew": "את האהבה",
+        "transcription": ""
+      }
+    },
+    {
+      "type": "bridge",
+      "content": {
+        "english": "",
+        "hebrew": "ונהרות",
+        "transcription": ""
+      }
+    },
+    {
+      "type": "bridge",
+      "content": {
+        "english": "",
+        "hebrew": "לא ישטפוה",
+        "transcription": ""
+      }
+    },
+    {
+      "type": "chorus",
+      "content": {
+        "english": "New day will rise",
+        "hebrew": "יום חדש יעלה",
+        "transcription": "נְיוּ דֵיי וִיל רַייז"
+      }
+    },
+    {
+      "type": "chorus",
+      "content": {
+        "english": "Everyone cries",
+        "hebrew": "כולם בוכים",
+        "transcription": "אֶבְרִיוַאן קְרַאייז"
+      }
+    },
+    {
+      "type": "chorus",
+      "content": {
+        "english": "Don't cry alone",
+        "hebrew": "אל תבכה לבד",
+        "transcription": "דוֹנְט קְרַאיי אַלוֹן"
+      }
+    },
+    {
+      "type": "chorus",
+      "content": {
+        "english": "Darkness will fade",
+        "hebrew": "החושך ייעלם",
+        "transcription": "דַארְקְנֶס וִיל פֵייד"
+      }
+    },
+    {
+      "type": "chorus",
+      "content": {
+        "english": "All the pain will go by",
+        "hebrew": "כל הכאב יעבור",
+        "transcription": "אוֹל דֶה פֵּיין וִיל גוֹ בַּאיי"
+      }
+    },
+    {
+      "type": "chorus",
+      "content": {
+        "english": "But we will stay",
+        "hebrew": "אבל אנחנו נישאר",
+        "transcription": "בַּאט וִי וִיל סְטֵיי"
+      }
+    },
+    {
+      "type": "chorus",
+      "content": {
+        "english": "Even if you say goodbye",
+        "hebrew": "גם אם תאמר שלום",
+        "transcription": "אִיבֶן אִיף יוּ סֵיי גוּדבַּיי"
+      }
+    },
+    {
+      "type": "outro",
+      "content": {
+        "english": "A new day will rise",
+        "hebrew": "יום חדש יעלה",
+        "transcription": "אֶה נְיוּ דֵיי וִיל רַייז"
+      }
+    },
+    {
+      "type": "outro",
+      "content": {
+        "english": "New day will rise",
+        "hebrew": "יום חדש יעלה",
+        "transcription": "נְיוּ דֵיי וִיל רַייז"
+      }
+    }
+  ],
+  "tags": ["ballad", "inspirational", "multilingual"]
+}
