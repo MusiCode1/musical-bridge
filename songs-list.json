@@ -2,19 +2,19 @@
     {
         "name": "October rain",
         "artist": "Shulem",
-        "page": "/lyrics-display.html?song=october-rain",
+        "page": "lyrics-display.html?song=october-rain",
         "youtube": "D2gBJ58drtg"
     },
     {
         "name": "Ani Maamin",
         "artist": "Tai Grozberg",
-        "page": "/lyrics-display.html?song=ani-mamin",
+        "page": "lyrics-display.html?song=ani-mamin",
         "youtube": "eGq79yhOxjo"
     },
     {
         "name": "New Day Will Rise",
         "artist": "Yuval Refael",
-        "page": "/lyrics-display.html?song=new-day-will-rise",
+        "page": "lyrics-display.html?song=new-day-will-rise",
         "youtube": "Q3BELu4z6-U"
     }
 ]
